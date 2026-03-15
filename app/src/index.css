@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Kenyan-inspired vibrant color palette */
+    --background: 45 40% 97%;
+    --foreground: 220 30% 15%;
+    --card: 45 40% 97%;
+    --card-foreground: 220 30% 15%;
+    --popover: 45 40% 97%;
+    --popover-foreground: 220 30% 15%;
+    
+    /* Primary - Kenyan Green */
+    --primary: 142 76% 36%;
+    --primary-foreground: 0 0% 100%;
+    
+    /* Secondary - Warm Earth */
+    --secondary: 25 70% 45%;
+    --secondary-foreground: 0 0% 100%;
+    
+    /* Accent - Kenyan Red */
+    --accent: 0 72% 51%;
+    --accent-foreground: 0 0% 100%;
+    
+    /* Muted - Sand */
+    --muted: 35 30% 90%;
+    --muted-foreground: 220 15% 45%;
+    
+    /* Destructive */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    
+    /* Borders */
+    --border: 35 20% 85%;
+    --input: 35 20% 85%;
+    --ring: 142 76% 36%;
+    --radius: 1rem;
+    
+    /* Additional vibrant colors */
+    --kenya-green: 142 76% 36%;
+    --kenya-red: 0 72% 51%;
+    --kenya-black: 220 30% 15%;
+    --sunset-orange: 25 90% 55%;
+    --maasai-red: 350 85% 45%;
+    --savannah-gold: 45 80% 55%;
+    --ocean-blue: 200 80% 45%;
+    --royal-purple: 270 60% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .gradient-kenya {
+    background: linear-gradient(135deg, hsl(var(--kenya-green)) 0%, hsl(var(--kenya-red)) 100%);
+  }
+  .gradient-sunset {
+    background: linear-gradient(135deg, hsl(var(--sunset-orange)) 0%, hsl(var(--maasai-red)) 100%);
+  }
+  .gradient-earth {
+    background: linear-gradient(135deg, hsl(var(--savannah-gold)) 0%, hsl(var(--secondary)) 100%);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary) / 0.4);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary) / 0.6);
+}
+
+/* Animation utilities */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px hsl(var(--primary) / 0.3); }
+  50% { box-shadow: 0 0 40px hsl(var(--primary) / 0.5); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
