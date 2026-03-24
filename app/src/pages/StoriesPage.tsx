@@ -7,65 +7,125 @@ gsap.registerPlugin(ScrollTrigger);
 
 const stories = [
   {
-    name: 'Amina Hassan',
-    role: 'Engineering Graduate',
-    location: 'Nairobi',
-    image: '/female_graduate_kenya.jpg',
-    quote: 'I was the first in my family to attend university. The foundation didn\'t just pay my tuition—they believed in me when no one else did. Today, I\'m a civil engineer building roads across Kenya.',
-    achievement: 'First Class Honors, University of Nairobi',
-    currentRole: 'Civil Engineer at Kenya National Highways Authority',
-    rating: 5,
-  },
-  {
-    name: 'John Ochieng',
-    role: 'Medical Doctor',
-    location: 'Kisumu',
-    image: '/medical_student_kenya.jpg',
-    quote: 'Growing up in a village, becoming a doctor seemed like an impossible dream. Bright Tomorrow made it possible. Now I\'m giving back by treating patients in underserved communities.',
-    achievement: 'MBChB, Moi University',
-    currentRole: 'Medical Officer at Jaramogi Oginga Odinga Hospital',
-    rating: 5,
-  },
-  {
-    name: 'Grace Wanjiku',
-    role: 'Software Engineer',
-    location: 'Nairobi',
-    image: '/campus_kenya.jpg',
-    quote: 'The mentorship I received was invaluable. My mentor guided me through my studies and helped me secure my first job. Now I work at a global tech company.',
-    achievement: 'BSc Computer Science, Strathmore University',
-    currentRole: 'Software Engineer at Microsoft',
-    rating: 5,
-  },
-  {
-    name: 'Peter Kamau',
-    role: 'Teacher',
-    location: 'Nakuru',
+    name: 'Denis',
+    role: 'Alumnus',
+    location: 'Kenya',
     image: '/hero_kenyan_student.jpg',
-    quote: 'Education changed my life, and now I\'m changing lives through education. I teach mathematics at a high school and inspire the next generation of scholars.',
-    achievement: 'BEd Mathematics, Kenyatta University',
-    currentRole: 'Mathematics Teacher at Nakuru High School',
+    quote: 'The Bright Tomorrow Scholars Foundation gave me hope when I had none. Their support has been the foundation of my success today.',
+    achievement: 'University Graduate',
+    currentRole: 'Professional in Kenya',
     rating: 5,
   },
   {
-    name: 'Faith Akinyi',
-    role: 'Lawyer',
-    location: 'Mombasa',
-    image: '/graduation_kenya.jpg',
-    quote: 'The foundation saw potential in me when I couldn\'t see it in myself. Their support gave me the confidence to pursue law and fight for justice.',
-    achievement: 'LLB, University of Nairobi',
-    currentRole: 'Advocate at the High Court of Kenya',
-    rating: 5,
-  },
-  {
-    name: 'David Mutua',
-    role: 'Entrepreneur',
-    location: 'Machakos',
+    name: 'Elijah',
+    role: 'Scholar',
+    location: 'Kenya',
     image: '/study_group_kenya.jpg',
-    quote: 'Beyond the financial support, the foundation taught me leadership and entrepreneurship. I\'ve started my own business and now employ 20 people in my community.',
-    achievement: 'BCom, University of Nairobi',
-    currentRole: 'Founder & CEO, Mutua Enterprises',
+    quote: 'I am forever grateful for the opportunity to pursue my education without the burden of financial stress.',
+    achievement: 'Academic Excellence',
+    currentRole: 'University Student',
     rating: 5,
   },
+  {
+    name: 'Ruth',
+    role: 'Alumna',
+    location: 'Kenya',
+    image: '/female_graduate_kenya.jpg',
+    quote: 'Through the foundation, I learned that my dreams are valid. I am now working towards empowering others in my community.',
+    achievement: 'Degree Holder',
+    currentRole: 'Community Leader',
+    rating: 5,
+  },
+  {
+    name: 'Peter',
+    role: 'Scholar',
+    location: 'Kenya',
+    image: '/medical_student_kenya.jpg',
+    quote: 'The mentorship and guidance I received were just as valuable as the financial support. Thank you for believing in me.',
+    achievement: 'Dean\'s List',
+    currentRole: 'Medical Student',
+    rating: 5,
+  },
+  {
+    name: 'Diana',
+    role: 'Alumna',
+    location: 'Kenya',
+    image: '/campus_kenya.jpg',
+    quote: 'My educational journey was made possible by the generous donors of this foundation. I am a proud product of your kindness.',
+    achievement: 'First Class Honors',
+    currentRole: 'Corporate Professional',
+    rating: 5,
+  },
+  {
+    name: 'Sheila',
+    role: 'Scholar',
+    location: 'Kenya',
+    image: '/graduation_kenya.jpg',
+    quote: 'Every day I strive to make the foundation proud. The scholarship gave me wings to fly high.',
+    achievement: 'Student Leader',
+    currentRole: 'Undergraduate',
+    rating: 5,
+  },
+  {
+    name: 'Baba Joy',
+    role: 'Parent',
+    location: 'Kenya',
+    image: '/study_group_kenya.jpg',
+    quote: 'As a parent, seeing my daughter Joy get the education she deserves brings tears to my eyes. God bless the Bright Tomorrow family.',
+    achievement: 'Proud Parent',
+    currentRole: 'Business Owner',
+    rating: 5,
+  },
+  {
+    name: 'Esther',
+    role: 'Alumna',
+    location: 'Kenya',
+    image: '/female_graduate_kenya.jpg',
+    quote: 'I am building my career and supporting my younger siblings, all thanks to the strong foundation I received here.',
+    achievement: 'Professional Certification',
+    currentRole: 'Financial Analyst',
+    rating: 5,
+  },
+  {
+    name: 'Kimani',
+    role: 'Scholar',
+    location: 'Kenya',
+    image: '/hero_student.jpg',
+    quote: 'The holiday tuition and mentorship camps truly shaped my character and academic focus.',
+    achievement: 'Top KCSE Performer',
+    currentRole: 'Engineering Student',
+    rating: 5,
+  },
+  {
+    name: 'Carol',
+    role: 'Alumna',
+    location: 'Kenya',
+    image: '/medical_student_kenya.jpg',
+    quote: 'I look back at where I came from, and I know it is by God\'s grace and the foundation\'s help that I am here today.',
+    achievement: 'Master\'s Degree Candidate',
+    currentRole: 'Educator',
+    rating: 5,
+  },
+  {
+    name: 'Jesse',
+    role: 'Scholar',
+    location: 'Kenya',
+    image: '/campus_kenya.jpg',
+    quote: 'The scholarship relieved my family of a huge burden. I am committed to making the most of this opportunity.',
+    achievement: 'Excellence in Sciences',
+    currentRole: 'High School Student',
+    rating: 5,
+  },
+  {
+    name: 'Brighitte Njoki Muchemi',
+    role: 'Alumna',
+    location: 'Kenya',
+    image: '/graduation_kenya.jpg',
+    quote: 'I am proud to be associated with an organization that genuinely cares about the future of Kenyan youth.',
+    achievement: 'University Graduate',
+    currentRole: 'Professional',
+    rating: 5,
+  }
 ];
 
 const stats = [
@@ -147,53 +207,49 @@ export default function StoriesPage() {
             {stories.map((story, index) => (
               <div
                 key={index}
-                className="story-card bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 group"
+                className="story-card bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 flex flex-col group border border-gray-100"
               >
-                {/* Image */}
-                <div className="relative h-64 overflow-hidden">
-                  <img
-                    src={story.image}
-                    alt={story.name}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <h3 className="font-['Montserrat'] font-bold text-xl text-white mb-1">
-                      {story.name}
-                    </h3>
-                    <div className="flex items-center gap-2 text-white/80 text-sm">
-                      <MapPin className="w-4 h-4" />
-                      {story.location}
-                    </div>
+                {/* Header */}
+                <div className="bg-gradient-to-r from-[#2D9C4E] to-[#1B5E2E] p-8 text-white">
+                  <h3 className="font-['Montserrat'] font-bold text-2xl mb-2">
+                    {story.name}
+                  </h3>
+                  <div className="flex items-center gap-2 text-white/90 text-sm font-medium">
+                    <MapPin className="w-4 h-4" />
+                    {story.location}
                   </div>
                 </div>
 
                 {/* Content */}
-                <div className="p-6">
+                <div className="p-8 flex-grow flex flex-col">
                   {/* Rating */}
-                  <div className="flex gap-1 mb-4">
+                  <div className="flex gap-1 mb-8">
                     {[...Array(story.rating)].map((_, i) => (
                       <Star key={i} className="w-4 h-4 text-[#F4A261] fill-[#F4A261]" />
                     ))}
                   </div>
 
                   {/* Quote */}
-                  <div className="relative mb-6">
-                    <Quote className="absolute -top-2 -left-2 w-8 h-8 text-[#2D9C4E]/20" />
-                    <p className="text-gray-600 leading-relaxed pl-4">
-                      {story.quote}
+                  <div className="relative mb-10 flex-grow">
+                    <Quote className="absolute -top-3 -left-3 w-10 h-10 text-[#2D9C4E]/10" />
+                    <p className="text-gray-700 leading-relaxed pl-5 font-medium italic text-lg">
+                      "{story.quote}"
                     </p>
                   </div>
 
                   {/* Achievement */}
-                  <div className="space-y-2 pt-4 border-t">
-                    <div className="flex items-start gap-2">
-                      <GraduationCap className="w-4 h-4 text-[#2D9C4E] flex-shrink-0 mt-0.5" />
-                      <span className="text-sm text-gray-600">{story.achievement}</span>
+                  <div className="space-y-4 pt-6 border-t border-gray-100">
+                    <div className="flex items-center gap-4">
+                      <div className="w-10 h-10 rounded-full bg-[#2D9C4E]/10 flex items-center justify-center flex-shrink-0 group-hover:bg-[#2D9C4E] group-hover:text-white transition-colors duration-300">
+                        <GraduationCap className="w-5 h-5 text-[#2D9C4E] group-hover:text-white transition-colors duration-300" />
+                      </div>
+                      <span className="text-sm font-bold text-gray-800">{story.achievement}</span>
                     </div>
-                    <div className="flex items-start gap-2">
-                      <Briefcase className="w-4 h-4 text-[#E63946] flex-shrink-0 mt-0.5" />
-                      <span className="text-sm text-gray-600">{story.currentRole}</span>
+                    <div className="flex items-center gap-4">
+                      <div className="w-10 h-10 rounded-full bg-[#E63946]/10 flex items-center justify-center flex-shrink-0 group-hover:bg-[#E63946] group-hover:text-white transition-colors duration-300">
+                        <Briefcase className="w-5 h-5 text-[#E63946] group-hover:text-white transition-colors duration-300" />
+                      </div>
+                      <span className="text-sm font-bold text-gray-800">{story.currentRole}</span>
                     </div>
                   </div>
                 </div>
@@ -213,26 +269,22 @@ export default function StoriesPage() {
                   Featured Scholar
                 </span>
                 <h2 className="font-['Montserrat'] font-black text-4xl mb-4">
-                  "Education Gave Me a Voice"
+                  "The Glue That Holds The Family Together"
                 </h2>
                 <p className="text-white/90 text-lg leading-relaxed mb-6">
-                  Meet Dr. Sarah Njeri, a Bright Tomorrow alumna who is now a leading 
-                  researcher in renewable energy. Her journey from a small village in 
-                  Kiambu to earning a PhD from MIT is a testament to the power of 
-                  education and perseverance.
+                  Meet Wilson, a Bright Tomorrow alumnus who is currently pursuing his PhD in the USA. 
+                  His journey exemplifies the ripple effect of education and the deep gratitude our scholars hold.
                 </p>
-                <p className="text-white/80 leading-relaxed mb-8">
-                  "The foundation didn't just fund my education; they invested in my 
-                  dreams. Today, I'm working on sustainable energy solutions that will 
-                  power Kenya's future."
+                <p className="text-white/80 leading-relaxed mb-8 italic">
+                  "Thank you for always being there for your family and siblings. Your love, strength, and sacrifices never go unnoticed. You carry everyone with patience, kindness, and a big heart, even when it’s not easy. You are the glue that holds the family together, the voice of comfort in hard times, and the reason many of us keep going. We appreciate you more than words can say, and we are truly blessed to have you."
                 </p>
                 <div className="flex items-center gap-4">
                   <div className="w-14 h-14 rounded-full bg-white/20 flex items-center justify-center">
                     <GraduationCap className="w-7 h-7 text-white" />
                   </div>
                   <div>
-                    <p className="font-bold text-lg">Dr. Sarah Njeri</p>
-                    <p className="text-white/80">PhD Renewable Energy, MIT</p>
+                    <p className="font-bold text-lg">Wilson</p>
+                    <p className="text-white/80">Pursuing PhD, USA</p>
                   </div>
                 </div>
               </div>

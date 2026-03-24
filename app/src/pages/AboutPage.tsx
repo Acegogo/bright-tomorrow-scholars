@@ -96,28 +96,33 @@ export default function AboutPage() {
               <span className="inline-block px-4 py-2 bg-[#2D9C4E]/10 text-[#2D9C4E] rounded-full text-sm font-medium mb-6">
                 About Us
               </span>
-              <h1 className="font-['Montserrat'] font-black text-5xl lg:text-6xl text-gray-900 leading-[1.1] mb-6">
-                Two Decades of{' '}
+              <h1 className="font-['Montserrat'] font-black text-4xl lg:text-5xl text-gray-900 leading-[1.1] mb-6">
+                The Vision of{' '}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2D9C4E] to-[#1B5E2E]">
-                  Transforming Lives
+                  Niceta Ndege
                 </span>
               </h1>
               <p className="text-xl text-gray-600 leading-relaxed mb-6">
-                Bright Tomorrow Scholars Foundation was founded in 2003 with a simple 
-                mission: to ensure that every deserving Kenyan student has access to 
-                quality education, regardless of their financial background.
+                Bright Tomorrow Scholars Foundation was born out of the unmatched compassion and unyielding resilience of our founder, Niceta Ndege. 
+                As a dedicated teacher, Niceta's journey began right inside her own classrooms. Day after day, she noticed brilliant but deeply needy students struggling simply because they lacked resources. 
+                Unable to look away, she took it upon herself to act.
+              </p>
+              <p className="text-lg text-gray-600 leading-relaxed mb-6">
+                Armed with nothing but faith and an unshakable set of values, Niceta started this mission alone, going from door to door 
+                to support the most vulnerable. Her unwavering commitment to her students, even in the face of daunting financial and emotional challenges, 
+                formed the very bedrock of the foundation we see today.
               </p>
               <p className="text-lg text-gray-600 leading-relaxed">
-                What started as a small initiative supporting 50 primary school students 
-                has grown into a comprehensive scholarship program that has transformed 
-                over 12,000 lives across Kenya.
+                As a profoundly God-fearing woman who firmly believes that God's grace is sufficient for her, she has nurtured this 
+                foundation from its humble beginnings. Because of her unmatched joy in charity, countless needy students from Kenya 
+                have not only reached their dreams but have soared beyond them, with some even securing opportunities to study abroad.
               </p>
             </div>
             <div className="relative">
               <div className="rounded-3xl overflow-hidden shadow-2xl">
                 <img
-                  src="/founder_kenya.jpg"
-                  alt="Foundation founder"
+                  src="/founder_image.jpeg"
+                  alt="Foundation founder - Niceta Ndege"
                   className="w-full h-[500px] object-cover"
                 />
               </div>
@@ -251,19 +256,20 @@ export default function AboutPage() {
             <div className="bg-white rounded-3xl overflow-hidden shadow-lg">
               <div className="h-64 overflow-hidden">
                 <img
-                  src="/founder_kenya.jpg"
+                  src="/founder_image.jpeg"
                   alt="Founder"
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="p-6">
                 <h3 className="font-['Montserrat'] font-bold text-xl text-gray-900 mb-1">
-                  Mama Grace Wanjiku
+                  Niceta Ndege
                 </h3>
                 <p className="text-[#2D9C4E] font-medium mb-3">Founder & Chairperson</p>
                 <p className="text-gray-600 text-sm">
-                  A retired educator with over 40 years of experience, Mama Grace 
-                  founded Bright Tomorrow with a vision to transform lives through education.
+                  Starting as a dedicated teacher who saw the need in her own classrooms, Niceta's unmatched joy in charity and profound resilience 
+                  have transformed countless lives. As a God-fearing woman relying entirely on His grace, 
+                  her strong moral values continue to inspire and drive our mission to see needy Kenyan students achieve their dreams.
                 </p>
               </div>
             </div>

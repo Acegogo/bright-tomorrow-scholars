@@ -24,8 +24,7 @@ const contactInfo = [
     icon: Phone,
     title: 'Call Us',
     details: [
-      '+254 712 345 678',
-      '+254 733 456 789',
+      '+254 725 673476',
       'Mon-Fri, 8am-5pm EAT',
     ],
     color: 'bg-[#E63946]/10 text-[#E63946]',
@@ -34,9 +33,7 @@ const contactInfo = [
     icon: Mail,
     title: 'Email Us',
     details: [
-      'info@brighttomorrow.co.ke',
-      'applications@brighttomorrow.co.ke',
-      'donations@brighttomorrow.co.ke',
+      'info@brightscholarstomorrow.org',
     ],
     color: 'bg-[#F4A261]/10 text-[#E76F51]',
   },
@@ -56,22 +53,22 @@ const regionalOffices = [
   {
     city: 'Nairobi',
     address: 'Kimathi Street, Nairobi CBD',
-    phone: '+254 712 345 678',
+    phone: '+254 725 673476',
   },
   {
     city: 'Mombasa',
     address: 'Moi Avenue, Mombasa CBD',
-    phone: '+254 723 456 789',
+    phone: '+254 725 673476',
   },
   {
     city: 'Kisumu',
     address: 'Oginga Odinga Street, Kisumu',
-    phone: '+254 734 567 890',
+    phone: '+254 725 673476',
   },
   {
     city: 'Nakuru',
     address: 'Kenyatta Avenue, Nakuru',
-    phone: '+254 745 678 901',
+    phone: '+254 725 673476',
   },
 ];
 
@@ -259,7 +256,7 @@ export default function ContactPage() {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      placeholder="+254 712 345 678"
+                      placeholder="+254 725 673476"
                       className="py-6"
                     />
                   </div>
@@ -411,18 +408,28 @@ export default function ContactPage() {
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <a
-              href="mailto:info@brighttomorrow.co.ke"
+              href="mailto:info@brightscholarstomorrow.org"
               className="inline-flex items-center gap-2 bg-white text-[#2D9C4E] rounded-full px-8 py-4 font-bold hover:bg-gray-100 transition-colors"
             >
               <Mail className="w-5 h-5" />
               Email Us
             </a>
             <a
-              href="tel:+254712345678"
+              href="tel:+254725673476"
               className="inline-flex items-center gap-2 border-2 border-white text-white rounded-full px-8 py-4 font-bold hover:bg-white/10 transition-colors"
             >
               <Phone className="w-5 h-5" />
               Call Us
+            </a>
+            <a
+              href="https://wa.me/254725673476"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-[#25D366] text-white rounded-full px-8 py-4 font-bold hover:bg-[#128C7E] transition-colors"
+            >
+              {/* Using Phone icon for WhatsApp as standard Lucide doesn't have a dedicated WhatsApp icon */}
+              <Phone className="w-5 h-5" />
+              WhatsApp Us
             </a>
           </div>
         </div>

@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -33,9 +33,30 @@ const programs = [
     description: 'University scholarships and international study opportunities for top performers.',
     color: 'from-[#F4A261] to-[#E76F51]',
   },
+  {
+    icon: Award,
+    title: 'Sports Tournaments',
+    description: 'Nurturing athletic talent, promoting unity, and supporting education through sports.',
+    color: 'from-[#9B5DE5] to-[#7B2CBF]',
+  },
+];
+
+const heroSlides = [
+  '/hero_slide_1.png',
+  '/hero_slide_2.png',
+  '/hero_slide_3.png',
 ];
 
 export default function HomePage() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
   const heroRef = useRef<HTMLDivElement>(null);
   const statsRef = useRef<HTMLDivElement>(null);
   const programsRef = useRef<HTMLDivElement>(null);
@@ -182,15 +203,20 @@ export default function HomePage() {
             </div>
 
             <div className="hero-image relative">
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl">
-                <img
-                  src="/hero_kenyan_student.jpg"
-                  alt="Kenyan student"
-                  className="w-full h-[500px] lg:h-[600px] object-cover"
-                />
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl h-[500px] lg:h-[600px] bg-gray-100">
+                {heroSlides.map((slide, index) => (
+                  <img
+                    key={slide}
+                    src={slide}
+                    alt={`Foundation story slide ${index + 1}`}
+                    className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
+                      index === currentSlide ? 'opacity-100' : 'opacity-0'
+                    }`}
+                  />
+                ))}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
               </div>
-              <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-xl p-6">
+              <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-xl p-6 z-20">
                 <div className="flex items-center gap-4">
                   <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[#2D9C4E] to-[#1B5E2E] flex items-center justify-center">
                     <Users className="w-7 h-7 text-white" />
@@ -241,7 +267,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {programs.map((program, index) => (
               <div
                 key={index}

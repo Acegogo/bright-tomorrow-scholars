@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Check, BookOpen, GraduationCap, Globe, ClipboardCheck, FileText, MessageSquare, ArrowRight } from 'lucide-react';
+import { Check, BookOpen, GraduationCap, Globe, ClipboardCheck, FileText, MessageSquare, ArrowRight, Award } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 
@@ -79,6 +79,30 @@ const programs = [
     color: 'from-[#F4A261] to-[#E76F51]',
     bgColor: 'bg-[#F4A261]/5',
     image: '/tech_students_kenya.jpg',
+  },
+  {
+    id: 'sports',
+    icon: Award,
+    title: 'Sports Tournaments',
+    subtitle: 'Nurturing Talent & Unity',
+    description: 'We organize sports tournaments to nurture local athletic talent, promote community unity, and raise funds for our educational scholarship programs.',
+    coverage: [
+      'Sports equipment and gear',
+      'Tournament organization and logistics',
+      'Coaching and mentorship clinics',
+      'Community engagement events',
+      'Trophies and recognition awards',
+      'Talent scouting opportunities',
+    ],
+    eligibility: [
+      'Youth from local communities',
+      'Passion for sports and teamwork',
+      'Commitment to community values',
+      'Willingness to participate in mentorship',
+    ],
+    color: 'from-[#9B5DE5] to-[#7B2CBF]',
+    bgColor: 'bg-[#9B5DE5]/5',
+    image: '/sports_tournament.png',
   },
 ];
 
@@ -222,12 +246,12 @@ export default function ProgramsPage() {
                     </div>
                   </div>
 
-                  <Link to="/contact">
-                    <Button className={`bg-gradient-to-r ${program.color} text-white rounded-full px-8 py-6`}>
-                      Apply for This Program
+                  <a href="https://wa.me/254725673476" target="_blank" rel="noopener noreferrer">
+                    <Button className={`bg-gradient-to-r ${program.color} text-white rounded-full px-8 py-6 shadow-lg hover:shadow-xl`}>
+                      Apply via WhatsApp
                       <ArrowRight className="w-5 h-5 ml-2" />
                     </Button>
-                  </Link>
+                  </a>
                 </div>
 
                 <div className={`${index % 2 === 1 ? 'lg:order-1' : ''}`}>

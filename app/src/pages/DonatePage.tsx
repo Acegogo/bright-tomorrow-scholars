@@ -52,7 +52,6 @@ export default function DonatePage() {
   const [selectedAmount, setSelectedAmount] = useState<number | null>(10000);
   const [customAmount, setCustomAmount] = useState('');
   const [donationType, setDonationType] = useState('one-time');
-  const [isProcessing, setIsProcessing] = useState(false);
   const pageRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -97,20 +96,15 @@ export default function DonatePage() {
     return () => ctx.revert();
   }, []);
 
-  const handleDonate = async () => {
+  const handleDonate = () => {
     const amount = selectedAmount || parseInt(customAmount) || 0;
     if (amount < 100) {
       alert('Please enter a valid amount (minimum KSh 100)');
       return;
     }
 
-    setIsProcessing(true);
-    
-    // Simulate payment processing
-    setTimeout(() => {
-      setIsProcessing(false);
-      alert(`Thank you for your donation of KSh ${amount.toLocaleString()}! You will receive a confirmation email shortly.`);
-    }, 2000);
+    const message = `Hello Bright Tomorrow Scholars, I would like to make a donation of KSh ${amount.toLocaleString()} for the ${donationType} program.`;
+    window.open(`https://wa.me/254725673476?text=${encodeURIComponent(message)}`, '_blank');
   };
 
   const finalAmount = selectedAmount || parseInt(customAmount) || 0;
@@ -231,17 +225,13 @@ export default function DonatePage() {
               {/* Donate Button */}
               <Button
                 onClick={handleDonate}
-                disabled={isProcessing || finalAmount < 100}
-                className="w-full bg-gradient-to-r from-[#E63946] to-[#D62839] hover:from-[#D62839] hover:to-[#C41E2B] text-white rounded-xl py-6 text-lg font-bold shadow-lg"
+                disabled={finalAmount < 100}
+                className="w-full bg-[#25D366] hover:bg-[#128C7E] text-white rounded-xl py-6 text-lg font-bold shadow-lg"
               >
-                {isProcessing ? (
-                  'Processing...'
-                ) : (
-                  <>
-                    <Heart className="w-5 h-5 mr-2 fill-white" />
-                    Donate KSh {finalAmount > 0 ? finalAmount.toLocaleString() : '0'}
-                  </>
-                )}
+                <>
+                  <Heart className="w-5 h-5 mr-2 fill-white" />
+                  Reach out via WhatsApp to Donate KSh {finalAmount > 0 ? finalAmount.toLocaleString() : '0'}
+                </>
               </Button>
 
               {/* Security Note */}
