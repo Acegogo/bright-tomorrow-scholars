@@ -118,15 +118,15 @@ export default function AboutPage() {
                 have not only reached their dreams but have soared beyond them, with some even securing opportunities to study abroad.
               </p>
             </div>
-            <div className="relative">
+            <div className="relative mt-8 lg:mt-0">
               <div className="rounded-3xl overflow-hidden shadow-2xl">
                 <img
-                  src="/founder_image.jpeg"
-                  alt="Foundation founder - Niceta Ndege"
-                  className="w-full h-[500px] object-cover"
+                  src="/hero_slide_1.png"
+                  alt="Bright Tomorrow Scholars Foundation impact"
+                  className="w-full h-[400px] lg:h-[500px] object-cover"
                 />
               </div>
-              <div className="absolute -bottom-6 -right-6 bg-white rounded-2xl shadow-xl p-6">
+              <div className="absolute -bottom-6 right-4 lg:-right-6 bg-white rounded-2xl shadow-xl p-6 z-10 hidden sm:block">
                 <p className="font-['Montserrat'] font-bold text-3xl text-[#2D9C4E]">20+</p>
                 <p className="text-gray-600">Years of Service</p>
               </div>
@@ -254,12 +254,8 @@ export default function AboutPage() {
 
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-white rounded-3xl overflow-hidden shadow-lg">
-              <div className="h-64 overflow-hidden">
-                <img
-                  src="/founder_image.jpeg"
-                  alt="Founder"
-                  className="w-full h-full object-cover"
-                />
+              <div className="h-64 bg-gradient-to-br from-[#F4A261] to-[#E76F51] flex items-center justify-center">
+                <Heart className="w-20 h-20 text-white/50" />
               </div>
               <div className="p-6">
                 <h3 className="font-['Montserrat'] font-bold text-xl text-gray-900 mb-1">
