@@ -57,7 +57,7 @@ const stories = [
     rating: 5,
   },
   {
-    name: 'Sheila',
+    name: 'Wawira',
     role: 'Scholar',
     location: 'Kenya',
     image: '/graduation_kenya.jpg',
@@ -181,7 +181,7 @@ export default function StoriesPage() {
               </span>
             </h1>
             <p className="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto mb-12">
-              Real stories of transformation, perseverance, and success. Our scholars 
+              Real stories of transformation, perseverance, and success. Our scholars
               are proof that education can change lives and build a brighter future.
             </p>
 
@@ -272,7 +272,7 @@ export default function StoriesPage() {
                   "The Glue That Holds The Family Together"
                 </h2>
                 <p className="text-white/90 text-lg leading-relaxed mb-6">
-                  Meet Wilson, a Bright Tomorrow alumnus who is currently pursuing his PhD in the USA. 
+                  Meet Wilson, a Bright Tomorrow alumnus who is currently pursuing his PhD in the USA.
                   His journey exemplifies the ripple effect of education and the deep gratitude our scholars hold.
                 </p>
                 <p className="text-white/80 leading-relaxed mb-8 italic">
@@ -307,7 +307,7 @@ export default function StoriesPage() {
             Be Part of the Success Story
           </h2>
           <p className="text-xl text-gray-600 leading-relaxed mb-8">
-            Your support can help create more success stories like these. Every donation 
+            Your support can help create more success stories like these. Every donation
             brings us closer to a Kenya where every child has access to quality education.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
