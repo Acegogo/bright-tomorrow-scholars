@@ -18,7 +18,7 @@ const contactInfo = [
       'Koinange Street • Floor 2 • Room 43',
       'Nyahururu, Laikipia County',
       'P.O. Box 1368, 20300 Nyahururu, Kenya',
-      'Regional hubs: Mbeere North, Embu County · Mwingi North, Kitui County',
+      'Regional hubs: Mbeere, Embu County · Mwingi North, Kitui County',
     ],
     color: 'bg-[#2D9C4E]/10 text-[#2D9C4E]',
   },
@@ -59,9 +59,9 @@ const regionalOffices = [
     phone: '+254 722 931145',
   },
   {
-    city: 'Mbeere North',
+    city: 'Mbeere',
     region: 'Embu County',
-    address: 'Regional hub — Mbeere North, Embu County',
+    address: 'Regional hub — Mbeere, Embu County',
     phone: '+254 722 931145',
   },
   {
@@ -151,7 +151,7 @@ export default function ContactPage() {
   };
 
   return (
-    <div ref={pageRef} className="pt-28">
+    <div ref={pageRef} className="pt-36">
       {/* Hero Section */}
       <section className="relative overflow-hidden py-24">
         <div
@@ -324,7 +324,7 @@ export default function ContactPage() {
                     <MapPin className="w-16 h-16 text-[#2D9C4E] mx-auto mb-4" />
                     <p className="text-gray-600 font-medium">Our offices across Kenya</p>
                     <p className="text-gray-500 text-sm max-w-sm mx-auto">
-                      Nyahururu, Laikipia County · Mbeere North, Embu County · Mwingi North, Kitui County
+                      Nyahururu, Laikipia County · Mbeere, Embu County · Mwingi North, Kitui County
                     </p>
                   </div>
                 </div>

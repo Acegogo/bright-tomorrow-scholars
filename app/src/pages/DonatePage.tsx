@@ -110,7 +110,7 @@ export default function DonatePage() {
   const finalAmount = selectedAmount || parseInt(customAmount) || 0;
 
   return (
-    <div ref={pageRef} className="pt-28">
+    <div ref={pageRef} className="pt-36">
       {/* Hero Section */}
       <section className="relative overflow-hidden py-24">
         <div

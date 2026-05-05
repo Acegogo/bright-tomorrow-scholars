@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Target, Eye, Heart, Award, Users, BookOpen } from 'lucide-react';
+import { Target, Eye, Heart, Award, Users, BookOpen, Laptop } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -87,7 +87,7 @@ export default function AboutPage() {
   }, []);
 
   return (
-    <div ref={pageRef} className="pt-28">
+    <div ref={pageRef} className="pt-36">
       {/* Hero Section */}
       <section className="relative overflow-hidden py-24">
         <div
@@ -306,28 +306,33 @@ export default function AboutPage() {
               </div>
               <div className="p-6">
                 <h3 className="font-['Montserrat'] font-bold text-xl text-gray-900 mb-1">
-                  Dr. James Ochieng
+                  Sheila Wambui Karuga
                 </h3>
                 <p className="text-[#2D9C4E] font-medium mb-3">Executive Director</p>
-                <p className="text-gray-600 text-sm">
-                  Dr. Ochieng oversees all operations and strategic planning, bringing 
-                  15 years of nonprofit leadership experience to the foundation.
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  Sheila brings fierce clarity and disciplined leadership to Bright Tomorrow Scholars Foundation—uniting donors, educators, 
+                  and volunteers behind one promise: every bright child deserves a fair shot at school and life beyond it. Seasoned in 
+                  operations and impact measurement, she turns compassion into accountable action: stronger programs in Nyahururu, Mbeere, 
+                  and Mwingi North; sharper support for scholars from primary desks to lecture halls abroad; and transparent stewardship 
+                  that earns lasting trust from families who count on us. Her voice carries Teacher Nice&apos;s founding spirit into the 
+                  future—strategic, faithful, and relentlessly student-first.
                 </p>
               </div>
             </div>
 
             <div className="bg-white rounded-3xl overflow-hidden shadow-lg">
               <div className="h-64 bg-gradient-to-br from-[#E63946] to-[#D62839] flex items-center justify-center">
-                <Users className="w-20 h-20 text-white/50" />
+                <Laptop className="w-20 h-20 text-white/50" />
               </div>
               <div className="p-6">
                 <h3 className="font-['Montserrat'] font-bold text-xl text-gray-900 mb-1">
-                  Sarah Akinyi
+                  Wallace Gogo Murimi
                 </h3>
-                <p className="text-[#E63946] font-medium mb-3">Program Manager</p>
-                <p className="text-gray-600 text-sm">
-                  Sarah manages our scholarship programs and student support services, 
-                  ensuring every scholar receives the help they need.
+                <p className="text-[#E63946] font-medium mb-3">Digital &amp; Technology Lead</p>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  Wallace architects the foundation&apos;s digital presence and systems—keeping our website, communications, and data 
+                  practices modern, secure, and accessible. From donor journeys to scholar applications, he ensures technology accelerates 
+                  mission instead of slowing it down, with an eye for reliability, privacy, and tools that scale as we grow.
                 </p>
               </div>
             </div>

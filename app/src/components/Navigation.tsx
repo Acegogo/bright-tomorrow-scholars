@@ -39,16 +39,16 @@ export default function Navigation() {
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex min-h-[4.75rem] items-center justify-between py-2 lg:min-h-[5rem] lg:py-3">
-            {/* Logo — PNG includes wordmark; drop-shadow keeps mark visible on the home hero */}
+          <div className="flex min-h-[5rem] items-center justify-between gap-4 py-2 sm:min-h-[5.5rem] lg:min-h-[6.75rem] lg:py-3">
+            {/* Logo — sized to read clearly beside nav pills (512×512 PNG scales down cleanly) */}
             <Link
               to="/"
-              className="flex items-center gap-2 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2D9C4E] focus-visible:ring-offset-2 rounded-md"
+              className="group flex shrink-0 items-center gap-2 rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2D9C4E] focus-visible:ring-offset-2"
             >
               <img
                 src="/bright-logo.png"
                 alt="Bright Tomorrow Scholars Foundation"
-                className={`h-[52px] w-auto max-w-[min(400px,calc(100vw-11rem))] object-contain object-left transition-opacity duration-300 group-hover:opacity-92 sm:h-16 lg:h-[4.75rem] ${
+                className={`h-[4.5rem] w-auto max-w-[calc(100vw-5.5rem)] object-contain object-left transition-opacity duration-300 group-hover:opacity-90 sm:h-[5.75rem] sm:max-w-[min(560px,calc(100vw-13rem))] md:h-28 lg:h-[7.25rem] lg:max-w-[min(640px,calc(100vw-22rem))] xl:h-[7.75rem] ${
                   isScrolled ? 'drop-shadow-sm' : 'drop-shadow-[0_2px_14px_rgba(255,255,255,0.9)]'
                 }`}
               />

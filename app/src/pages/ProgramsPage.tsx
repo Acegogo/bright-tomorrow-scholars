@@ -175,7 +175,7 @@ export default function ProgramsPage() {
   }, []);
 
   return (
-    <div ref={pageRef} className="pt-28">
+    <div ref={pageRef} className="pt-36">
       {/* Hero Section */}
       <section className="relative overflow-hidden py-24">
         <div

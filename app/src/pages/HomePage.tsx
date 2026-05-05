@@ -163,7 +163,7 @@ export default function HomePage() {
   return (
     <div className="overflow-hidden">
       {/* Hero Section */}
-      <section ref={heroRef} className="relative min-h-screen flex items-center pt-28">
+      <section ref={heroRef} className="relative min-h-screen flex items-center pt-36">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-[#2D9C4E]/10 via-transparent to-[#E63946]/10" />
           <div className="absolute top-20 right-0 w-1/2 h-1/2 bg-[#F4A261]/20 rounded-full blur-3xl" />

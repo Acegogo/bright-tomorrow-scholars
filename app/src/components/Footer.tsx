@@ -29,7 +29,7 @@ export default function Footer() {
               <img
                 src="/bright-logo.png"
                 alt="Bright Tomorrow Scholars Foundation"
-                className="h-16 sm:h-[4.75rem] w-auto max-w-[340px] object-contain object-left brightness-[1.06] contrast-105 saturate-[1.02]"
+                className="h-20 sm:h-24 lg:h-[6.75rem] w-auto max-w-[380px] sm:max-w-[420px] object-contain object-left brightness-[1.06] contrast-105 saturate-[1.02]"
               />
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed mb-6">
@@ -92,7 +92,7 @@ export default function Footer() {
                   Koinange Street, Floor 2, Room 43<br />
                   Nyahururu, Laikipia County<br />
                   P.O. Box 1368, 20300 Nyahururu, Kenya<br />
-                  <span className="text-gray-500">Regional hubs: Mbeere North, Embu County · Mwingi North, Kitui County</span>
+                  <span className="text-gray-500">Regional hubs: Mbeere, Embu County · Mwingi North, Kitui County</span>
                 </span>
               </li>
               <li className="flex items-center gap-3">
