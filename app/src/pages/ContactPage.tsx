@@ -14,8 +14,8 @@ const contactInfo = [
     title: 'Visit Us',
     details: [
       'Bright Tomorrow Scholars Foundation',
-      'Olympia Building, Nyahururu Town',
-      'Koinange Street • Floor 2 • Room 43',
+      'Njaus Corner, Nyahururu Town',
+      'Koinange Street',
       'Nyahururu, Laikipia County',
       'P.O. Box 1368, 20300 Nyahururu, Kenya',
       'Regional hubs: Mbeere, Embu County · Mwingi North, Kitui County',
@@ -55,7 +55,7 @@ const regionalOffices = [
   {
     city: 'Nyahururu',
     region: 'Laikipia County',
-    address: 'Olympia Building, Koinange Street · Floor 2, Room 43 · Postal 20300',
+    address: 'Njaus Corner, Koinange Street, Nyahururu · Postal 20300',
     phone: '+254 722 931145',
   },
   {
