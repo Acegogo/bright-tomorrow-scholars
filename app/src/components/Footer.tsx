@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom';
-import { Heart, MapPin, Phone, Mail, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
+import { MapPin, Phone, Mail, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
 
 const quickLinks = [
   { path: '/about', label: 'About Us' },
   { path: '/programs', label: 'Our Programs' },
   { path: '/stories', label: 'Success Stories' },
   { path: '/donate', label: 'Donate' },
-  { path: '/contact', label: 'Contact' },
+  { path: '/contact', label: 'Get in Touch' },
 ];
 
 const programs = [
@@ -25,16 +25,12 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <Link to="/" className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#2D9C4E] to-[#1B5E2E] flex items-center justify-center shadow-lg">
-                <Heart className="w-6 h-6 text-white fill-white" />
-              </div>
-              <div>
-                <span className="font-['Montserrat'] font-bold text-xl block">
-                  Bright Tomorrow
-                </span>
-                <span className="text-sm text-[#2D9C4E]">Scholars Foundation</span>
-              </div>
+            <Link to="/" className="flex items-center mb-6 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2D9C4E] rounded-md">
+              <img
+                src="/bright-logo.png"
+                alt="Bright Tomorrow Scholars Foundation"
+                className="h-16 sm:h-[4.75rem] w-auto max-w-[340px] object-contain object-left brightness-[1.06] contrast-105 saturate-[1.02]"
+              />
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed mb-6">
               Empowering Kenyan students through education for over 20 years. 
@@ -91,15 +87,17 @@ export default function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-[#2D9C4E] flex-shrink-0 mt-0.5" />
-                <span className="text-gray-400 text-sm">
-                  Kimathi Street, Nairobi CBD<br />
-                  P.O. Box 12345-00100<br />
-                  Nairobi, Kenya
+                <span className="text-gray-400 text-sm leading-relaxed">
+                  Olympia Building, Nyahururu Town<br />
+                  Koinange Street, Floor 2, Room 43<br />
+                  Nyahururu, Laikipia County<br />
+                  P.O. Box 1368, 20300 Nyahururu, Kenya<br />
+                  <span className="text-gray-500">Regional hubs: Mbeere North, Embu County · Mwingi North, Kitui County</span>
                 </span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-[#2D9C4E] flex-shrink-0" />
-                <span className="text-gray-400 text-sm">+254 725 673476</span>
+                <span className="text-gray-400 text-sm">+254 722 931145</span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-[#2D9C4E] flex-shrink-0" />

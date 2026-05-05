@@ -66,6 +66,10 @@
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Montserrat', sans-serif;
   }
+  ::selection {
+    background-color: hsl(142 76% 36% / 0.22);
+    color: hsl(220 30% 15%);
+  }
 }
 
 @layer utilities {

@@ -8,7 +8,7 @@ const navLinks = [
   { path: '/about', label: 'About' },
   { path: '/programs', label: 'Programs' },
   { path: '/stories', label: 'Stories' },
-  { path: '/contact', label: 'Contact' },
+  { path: '/contact', label: 'Get in Touch' },
 ];
 
 export default function Navigation() {
@@ -32,27 +32,26 @@ export default function Navigation() {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        className={`fixed top-0 left-0 right-0 z-50 border-b transition-all duration-500 ${
           isScrolled
-            ? 'bg-white/95 backdrop-blur-lg shadow-lg'
-            : 'bg-transparent'
+            ? 'border-gray-200/80 bg-white/95 shadow-md backdrop-blur-xl backdrop-saturate-150'
+            : 'border-transparent bg-transparent'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-20">
-            {/* Logo */}
-            <Link to="/" className="flex items-center gap-2 group">
-              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#2D9C4E] to-[#1B5E2E] flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow">
-                <Heart className="w-5 h-5 text-white fill-white" />
-              </div>
-              <div className="hidden sm:block">
-                <span className="font-['Montserrat'] font-bold text-lg text-gray-900 leading-tight">
-                  Bright Tomorrow
-                </span>
-                <span className="block text-xs text-[#2D9C4E] font-medium">
-                  Scholars Foundation
-                </span>
-              </div>
+          <div className="flex min-h-[4.75rem] items-center justify-between py-2 lg:min-h-[5rem] lg:py-3">
+            {/* Logo — PNG includes wordmark; drop-shadow keeps mark visible on the home hero */}
+            <Link
+              to="/"
+              className="flex items-center gap-2 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2D9C4E] focus-visible:ring-offset-2 rounded-md"
+            >
+              <img
+                src="/bright-logo.png"
+                alt="Bright Tomorrow Scholars Foundation"
+                className={`h-[52px] w-auto max-w-[min(400px,calc(100vw-11rem))] object-contain object-left transition-opacity duration-300 group-hover:opacity-92 sm:h-16 lg:h-[4.75rem] ${
+                  isScrolled ? 'drop-shadow-sm' : 'drop-shadow-[0_2px_14px_rgba(255,255,255,0.9)]'
+                }`}
+              />
             </Link>
 
             {/* Desktop Nav */}

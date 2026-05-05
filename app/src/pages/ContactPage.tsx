@@ -14,9 +14,11 @@ const contactInfo = [
     title: 'Visit Us',
     details: [
       'Bright Tomorrow Scholars Foundation',
-      'Kimathi Street, Nairobi CBD',
-      'P.O. Box 12345-00100',
-      'Nairobi, Kenya',
+      'Olympia Building, Nyahururu Town',
+      'Koinange Street • Floor 2 • Room 43',
+      'Nyahururu, Laikipia County',
+      'P.O. Box 1368, 20300 Nyahururu, Kenya',
+      'Regional hubs: Mbeere North, Embu County · Mwingi North, Kitui County',
     ],
     color: 'bg-[#2D9C4E]/10 text-[#2D9C4E]',
   },
@@ -24,7 +26,7 @@ const contactInfo = [
     icon: Phone,
     title: 'Call Us',
     details: [
-      '+254 725 673476',
+      '+254 722 931145',
       'Mon-Fri, 8am-5pm EAT',
     ],
     color: 'bg-[#E63946]/10 text-[#E63946]',
@@ -51,24 +53,22 @@ const contactInfo = [
 
 const regionalOffices = [
   {
-    city: 'Nairobi',
-    address: 'Kimathi Street, Nairobi CBD',
-    phone: '+254 725 673476',
+    city: 'Nyahururu',
+    region: 'Laikipia County',
+    address: 'Olympia Building, Koinange Street · Floor 2, Room 43 · Postal 20300',
+    phone: '+254 722 931145',
   },
   {
-    city: 'Mombasa',
-    address: 'Moi Avenue, Mombasa CBD',
-    phone: '+254 725 673476',
+    city: 'Mbeere North',
+    region: 'Embu County',
+    address: 'Regional hub — Mbeere North, Embu County',
+    phone: '+254 722 931145',
   },
   {
-    city: 'Kisumu',
-    address: 'Oginga Odinga Street, Kisumu',
-    phone: '+254 725 673476',
-  },
-  {
-    city: 'Nakuru',
-    address: 'Kenyatta Avenue, Nakuru',
-    phone: '+254 725 673476',
+    city: 'Mwingi North',
+    region: 'Kitui County',
+    address: 'Regional hub — Mwingi North, Kitui County',
+    phone: '+254 722 931145',
   },
 ];
 
@@ -151,36 +151,43 @@ export default function ContactPage() {
   };
 
   return (
-    <div ref={pageRef} className="pt-20">
+    <div ref={pageRef} className="pt-28">
       {/* Hero Section */}
-      <section className="relative py-24 bg-gradient-to-br from-[#2D9C4E]/10 via-white to-[#F4A261]/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="contact-hero-content">
+      <section className="relative overflow-hidden py-24">
+        <div
+          className="pointer-events-none absolute inset-0 bg-[url('/contact_nairobi_skyline.png')] bg-cover bg-[position:center_30%]"
+          aria-hidden
+        />
+        <div
+          className="pointer-events-none absolute inset-0 bg-[url('/inner_pages_reusable_soft_background.png')] bg-cover bg-center opacity-55 mix-blend-soft-light"
+          aria-hidden
+        />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-white/[0.93] via-white/80 to-gray-900/55" aria-hidden />
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-8">
+          <div className="contact-hero-content mx-auto max-w-4xl rounded-3xl border border-white/80 bg-white/88 px-6 py-12 shadow-2xl shadow-gray-900/10 backdrop-blur-xl sm:px-12">
             <span className="inline-block px-4 py-2 bg-[#2D9C4E]/10 text-[#2D9C4E] rounded-full text-sm font-medium mb-6">
               Get in Touch
             </span>
-            <h1 className="font-['Montserrat'] font-black text-5xl lg:text-6xl text-gray-900 leading-[1.1] mb-6">
+            <h1 className="font-['Montserrat'] font-black text-4xl sm:text-5xl lg:text-6xl text-gray-950 leading-[1.1] mb-6 tracking-tight">
               We'd Love to{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2D9C4E] to-[#1B5E2E]">
                 Hear From You
               </span>
             </h1>
-            <p className="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
+            <p className="text-xl font-medium leading-relaxed text-gray-800 max-w-3xl mx-auto text-balance">
               Whether you're interested in applying for a scholarship, making a donation, 
               or partnering with us, we're here to help. Reach out to us today.
             </p>
           </div>
         </div>
       </section>
-
-      {/* Contact Info Cards */}
       <section className="contact-info-section py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {contactInfo.map((info, index) => (
               <div
                 key={index}
-                className="contact-card bg-gray-50 rounded-2xl p-6 hover:shadow-lg transition-shadow"
+                className="contact-card bg-gray-50 rounded-2xl p-6 ring-1 ring-gray-900/5 hover:shadow-xl transition-shadow duration-300"
               >
                 <div className={`w-14 h-14 rounded-xl ${info.color} flex items-center justify-center mb-4`}>
                   <info.icon className="w-7 h-7" />
@@ -256,7 +263,7 @@ export default function ContactPage() {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      placeholder="+254 725 673476"
+                      placeholder="+254 722 931145"
                       className="py-6"
                     />
                   </div>
@@ -315,8 +322,10 @@ export default function ContactPage() {
                 <div className="w-full h-full bg-gradient-to-br from-[#2D9C4E]/20 to-[#F4A261]/20 flex items-center justify-center">
                   <div className="text-center">
                     <MapPin className="w-16 h-16 text-[#2D9C4E] mx-auto mb-4" />
-                    <p className="text-gray-600 font-medium">Nairobi, Kenya</p>
-                    <p className="text-gray-500 text-sm">Kimathi Street, Nairobi CBD</p>
+                    <p className="text-gray-600 font-medium">Our offices across Kenya</p>
+                    <p className="text-gray-500 text-sm max-w-sm mx-auto">
+                      Nyahururu, Laikipia County · Mbeere North, Embu County · Mwingi North, Kitui County
+                    </p>
                   </div>
                 </div>
               </div>
@@ -376,7 +385,7 @@ export default function ContactPage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {regionalOffices.map((office, index) => (
               <div
                 key={index}
@@ -388,6 +397,7 @@ export default function ContactPage() {
                 <h3 className="font-['Montserrat'] font-bold text-xl text-gray-900 mb-2">
                   {office.city}
                 </h3>
+                <p className="text-sm font-medium text-[#2D9C4E]/90 mb-2">{office.region}</p>
                 <p className="text-gray-600 text-sm mb-2">{office.address}</p>
                 <p className="text-[#2D9C4E] font-medium text-sm">{office.phone}</p>
               </div>
@@ -415,14 +425,14 @@ export default function ContactPage() {
               Email Us
             </a>
             <a
-              href="tel:+254725673476"
+              href="tel:+254722931145"
               className="inline-flex items-center gap-2 border-2 border-white text-white rounded-full px-8 py-4 font-bold hover:bg-white/10 transition-colors"
             >
               <Phone className="w-5 h-5" />
               Call Us
             </a>
             <a
-              href="https://wa.me/254725673476"
+              href="https://wa.me/254722931145"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-[#25D366] text-white rounded-full px-8 py-4 font-bold hover:bg-[#128C7E] transition-colors"

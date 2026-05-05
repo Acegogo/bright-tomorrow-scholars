@@ -33,7 +33,7 @@ const values = [
 ];
 
 const milestones = [
-  { year: '2003', event: 'Foundation established in Nairobi' },
+  { year: '2003', event: 'Foundation established in Nyahururu, Laikipia County' },
   { year: '2008', event: 'First 100 students graduate from university' },
   { year: '2012', event: 'Expanded to secondary school scholarships' },
   { year: '2016', event: 'Launched international study program' },
@@ -87,10 +87,15 @@ export default function AboutPage() {
   }, []);
 
   return (
-    <div ref={pageRef} className="pt-20">
+    <div ref={pageRef} className="pt-28">
       {/* Hero Section */}
-      <section className="relative py-24 bg-gradient-to-br from-[#2D9C4E]/5 to-[#F4A261]/5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative overflow-hidden py-24">
+        <div
+          className="pointer-events-none absolute inset-0 bg-[url('/inner_pages_reusable_soft_background.png')] bg-cover bg-center"
+          aria-hidden
+        />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#2D9C4E]/5 via-white/90 to-[#F4A261]/5" aria-hidden />
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="about-hero-content">
               <span className="inline-block px-4 py-2 bg-[#2D9C4E]/10 text-[#2D9C4E] rounded-full text-sm font-medium mb-6">
@@ -119,12 +124,37 @@ export default function AboutPage() {
               </p>
             </div>
             <div className="relative mt-8 lg:mt-0">
-              <div className="rounded-3xl overflow-hidden shadow-2xl">
-                <img
-                  src="/hero_slide_1.png"
-                  alt="Bright Tomorrow Scholars Foundation impact"
-                  className="w-full h-[400px] lg:h-[500px] object-cover"
-                />
+              <div className="space-y-4">
+                <div className="rounded-3xl overflow-hidden shadow-2xl">
+                  <img
+                    src="/about_vision_classroom.png"
+                    alt="Classroom representing the foundation's educational vision"
+                    className="w-full h-[280px] lg:h-[300px] object-cover"
+                  />
+                </div>
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="rounded-3xl overflow-hidden shadow-xl">
+                    <img
+                      src="/hero_slide_1.png"
+                      alt="Bright Tomorrow Scholars Foundation impact"
+                      className="w-full h-[200px] lg:h-[240px] object-cover"
+                    />
+                  </div>
+                  <div className="rounded-3xl overflow-hidden shadow-xl">
+                    <img
+                      src="/hero_slide_2.png"
+                      alt="Scholars and programs in action"
+                      className="w-full h-[200px] lg:h-[240px] object-cover"
+                    />
+                  </div>
+                </div>
+                <div className="rounded-3xl overflow-hidden shadow-lg">
+                  <img
+                    src="/hero_slide_3.png"
+                    alt="Foundation reach and celebration"
+                    className="w-full h-[140px] lg:h-[160px] object-cover"
+                  />
+                </div>
               </div>
               <div className="absolute -bottom-6 right-4 lg:-right-6 bg-white rounded-2xl shadow-xl p-6 z-10 hidden sm:block">
                 <p className="font-['Montserrat'] font-bold text-3xl text-[#2D9C4E]">20+</p>

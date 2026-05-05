@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navigation from './components/Navigation';
 import Footer from './components/Footer';
+import { ScrollToTopOnNavigate, BackToTopFAB } from './components/PageChrome';
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import ProgramsPage from './pages/ProgramsPage';
@@ -11,6 +12,7 @@ import ContactPage from './pages/ContactPage';
 function App() {
   return (
     <Router>
+      <ScrollToTopOnNavigate />
       <div className="min-h-screen bg-background">
         <Navigation />
         <main>
@@ -24,6 +26,7 @@ function App() {
           </Routes>
         </main>
         <Footer />
+        <BackToTopFAB />
       </div>
     </Router>
   );

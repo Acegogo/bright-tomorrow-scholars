@@ -104,16 +104,25 @@ export default function DonatePage() {
     }
 
     const message = `Hello Bright Tomorrow Scholars, I would like to make a donation of KSh ${amount.toLocaleString()} for the ${donationType} program.`;
-    window.open(`https://wa.me/254725673476?text=${encodeURIComponent(message)}`, '_blank');
+    window.open(`https://wa.me/254722931145?text=${encodeURIComponent(message)}`, '_blank');
   };
 
   const finalAmount = selectedAmount || parseInt(customAmount) || 0;
 
   return (
-    <div ref={pageRef} className="pt-20">
+    <div ref={pageRef} className="pt-28">
       {/* Hero Section */}
-      <section className="relative py-24 bg-gradient-to-br from-[#E63946]/10 via-white to-[#2D9C4E]/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative overflow-hidden py-24">
+        <div
+          className="pointer-events-none absolute inset-0 bg-[url('/inner_pages_reusable_soft_background.png')] bg-cover bg-center"
+          aria-hidden
+        />
+        <div
+          className="pointer-events-none absolute inset-0 bg-[url('/donate_generosity_textbook.png')] bg-cover bg-[position:70%_center] opacity-25"
+          aria-hidden
+        />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/93 via-[#E63946]/[0.06] to-[#2D9C4E]/10" aria-hidden />
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="donate-hero-content">
               <span className="inline-block px-4 py-2 bg-[#E63946]/10 text-[#E63946] rounded-full text-sm font-medium mb-6">
@@ -145,6 +154,14 @@ export default function DonatePage() {
                 <p className="text-gray-600">
                   <span className="font-bold text-gray-900">2,500+</span> donors have contributed this year
                 </p>
+              </div>
+
+              <div className="rounded-3xl overflow-hidden shadow-xl ring-2 ring-white/80">
+                <img
+                  src="/donate_generosity_textbook.png"
+                  alt="Representing generosity and the gift of learning"
+                  className="w-full h-[220px] sm:h-[280px] object-cover"
+                />
               </div>
             </div>
 

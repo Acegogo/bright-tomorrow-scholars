@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Check, BookOpen, GraduationCap, Globe, ClipboardCheck, FileText, MessageSquare, ArrowRight, Award } from 'lucide-react';
@@ -30,7 +30,8 @@ const programs = [
     ],
     color: 'from-[#2D9C4E] to-[#1B5E2E]',
     bgColor: 'bg-[#2D9C4E]/5',
-    image: '/primary_students_kenya.jpg',
+    heroImage: '/program_primary_children_reading.png',
+    legacyImage: '/primary_students_kenya.jpg',
   },
   {
     id: 'secondary',
@@ -54,7 +55,8 @@ const programs = [
     ],
     color: 'from-[#E63946] to-[#D62839]',
     bgColor: 'bg-[#E63946]/5',
-    image: '/study_group_kenya.jpg',
+    heroImage: '/program_secondary_corridor.png',
+    legacyImage: '/study_group_kenya.jpg',
   },
   {
     id: 'university',
@@ -78,7 +80,8 @@ const programs = [
     ],
     color: 'from-[#F4A261] to-[#E76F51]',
     bgColor: 'bg-[#F4A261]/5',
-    image: '/tech_students_kenya.jpg',
+    heroImage: '/program_university_campus.png',
+    legacyImage: '/tech_students_kenya.jpg',
   },
   {
     id: 'sports',
@@ -102,7 +105,8 @@ const programs = [
     ],
     color: 'from-[#9B5DE5] to-[#7B2CBF]',
     bgColor: 'bg-[#9B5DE5]/5',
-    image: '/sports_tournament.png',
+    heroImage: '/program_sports_youth_athletics.png',
+    legacyImage: '/sports_tournament.png',
   },
 ];
 
@@ -126,6 +130,7 @@ const applicationSteps = [
 
 export default function ProgramsPage() {
   const pageRef = useRef<HTMLDivElement>(null);
+  const [showJourneyAlt, setShowJourneyAlt] = useState(true);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -170,10 +175,15 @@ export default function ProgramsPage() {
   }, []);
 
   return (
-    <div ref={pageRef} className="pt-20">
+    <div ref={pageRef} className="pt-28">
       {/* Hero Section */}
-      <section className="relative py-24 bg-gradient-to-br from-[#2D9C4E]/10 via-white to-[#F4A261]/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="relative overflow-hidden py-24">
+        <div
+          className="pointer-events-none absolute inset-0 bg-[url('/inner_pages_reusable_soft_background.png')] bg-cover bg-center"
+          aria-hidden
+        />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#2D9C4E]/10 via-white/92 to-[#F4A261]/10" aria-hidden />
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="program-hero-content">
             <span className="inline-block px-4 py-2 bg-[#2D9C4E]/10 text-[#2D9C4E] rounded-full text-sm font-medium mb-6">
               Our Programs
@@ -188,6 +198,27 @@ export default function ProgramsPage() {
               From primary school to university and beyond, we provide comprehensive 
               support to ensure every scholar reaches their full potential.
             </p>
+            <div
+              className={`mt-12 grid gap-4 max-w-5xl mx-auto ${showJourneyAlt ? 'md:grid-cols-2' : 'grid-cols-1'}`}
+            >
+              <div className="rounded-2xl overflow-hidden shadow-2xl border border-white/60 bg-white/40">
+                <img
+                  src="/programs_journey_education.png"
+                  alt="Illustration of the educational journey from primary school to university"
+                  className="w-full h-full min-h-[200px] max-h-[min(420px,50vh)] object-cover"
+                />
+              </div>
+              {showJourneyAlt ? (
+                <div className="rounded-2xl overflow-hidden shadow-2xl border border-white/60 bg-white/40">
+                  <img
+                    src="/programs_journey_education%20(1).png"
+                    alt="Alternate artwork of the foundation's educational journey"
+                    className="w-full h-full min-h-[200px] max-h-[min(420px,50vh)] object-cover"
+                    onError={() => setShowJourneyAlt(false)}
+                  />
+                </div>
+              ) : null}
+            </div>
           </div>
         </div>
       </section>
@@ -246,7 +277,7 @@ export default function ProgramsPage() {
                     </div>
                   </div>
 
-                  <a href="https://wa.me/254725673476" target="_blank" rel="noopener noreferrer">
+                  <a href="https://wa.me/254722931145" target="_blank" rel="noopener noreferrer">
                     <Button className={`bg-gradient-to-r ${program.color} text-white rounded-full px-8 py-6 shadow-lg hover:shadow-xl`}>
                       Apply via WhatsApp
                       <ArrowRight className="w-5 h-5 ml-2" />
@@ -255,12 +286,19 @@ export default function ProgramsPage() {
                 </div>
 
                 <div className={`${index % 2 === 1 ? 'lg:order-1' : ''}`}>
-                  <div className="rounded-3xl overflow-hidden shadow-2xl">
-                    <img
-                      src={program.image}
-                      alt={program.title}
-                      className="w-full h-[400px] object-cover"
-                    />
+                  <div className="rounded-3xl overflow-hidden shadow-2xl ring-1 ring-gray-900/5 bg-gray-50/80 p-2">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                      <img
+                        src={program.heroImage}
+                        alt={`${program.title} — featured artwork`}
+                        className="w-full h-[220px] sm:h-[400px] rounded-2xl object-cover"
+                      />
+                      <img
+                        src={program.legacyImage}
+                        alt={`${program.title} — photos from our programs`}
+                        className="w-full h-[220px] sm:h-[400px] rounded-2xl object-cover"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -288,7 +326,7 @@ export default function ProgramsPage() {
             {applicationSteps.map((step, index) => (
               <div
                 key={index}
-                className="step-card bg-white rounded-3xl p-8 shadow-lg text-center"
+                className="step-card bg-white rounded-3xl p-8 text-center shadow-lg ring-1 ring-gray-900/5 transition-shadow duration-300 hover:shadow-xl"
               >
                 <div className="w-20 h-20 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-[#2D9C4E] to-[#1B5E2E] flex items-center justify-center">
                   <step.icon className="w-10 h-10 text-white" />

@@ -166,21 +166,30 @@ export default function StoriesPage() {
   }, []);
 
   return (
-    <div ref={pageRef} className="pt-20">
+    <div ref={pageRef} className="pt-28">
       {/* Hero Section */}
-      <section className="relative py-24 bg-gradient-to-br from-[#2D9C4E]/10 via-white to-[#F4A261]/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="stories-hero-content">
+      <section className="relative overflow-hidden py-24">
+        <div
+          className="pointer-events-none absolute inset-0 bg-[url('/stories_scholars_graduates.png')] bg-cover bg-[position:center_20%]"
+          aria-hidden
+        />
+        <div
+          className="pointer-events-none absolute inset-0 bg-[url('/inner_pages_reusable_soft_background.png')] bg-cover bg-center opacity-40"
+          aria-hidden
+        />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-white/[0.93] via-white/78 to-gray-900/45" aria-hidden />
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-8">
+          <div className="stories-hero-content mx-auto max-w-5xl rounded-3xl border border-white/80 bg-white/90 px-6 py-12 shadow-2xl shadow-gray-900/10 backdrop-blur-xl sm:px-10">
             <span className="inline-block px-4 py-2 bg-[#E63946]/10 text-[#E63946] rounded-full text-sm font-medium mb-6">
               Success Stories
             </span>
-            <h1 className="font-['Montserrat'] font-black text-5xl lg:text-6xl text-gray-900 leading-[1.1] mb-6">
+            <h1 className="font-['Montserrat'] font-black text-4xl sm:text-5xl lg:text-6xl text-gray-950 leading-[1.1] mb-6 tracking-tight">
               Meet Our{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2D9C4E] to-[#1B5E2E]">
                 Scholars
               </span>
             </h1>
-            <p className="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto mb-12">
+            <p className="text-xl font-medium leading-relaxed text-gray-800 max-w-3xl mx-auto mb-12 text-balance">
               Real stories of transformation, perseverance, and success. Our scholars
               are proof that education can change lives and build a brighter future.
             </p>
@@ -188,11 +197,11 @@ export default function StoriesPage() {
             {/* Stats */}
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 max-w-4xl mx-auto">
               {stats.map((stat, index) => (
-                <div key={index} className="bg-white rounded-2xl p-6 shadow-lg">
+                <div key={index} className="bg-gray-50/90 rounded-2xl p-6 shadow-lg ring-1 ring-gray-900/5">
                   <p className="font-['Montserrat'] font-black text-3xl text-[#2D9C4E] mb-1">
                     {stat.value}
                   </p>
-                  <p className="text-gray-600 text-sm">{stat.label}</p>
+                  <p className="text-gray-700 text-sm font-medium">{stat.label}</p>
                 </div>
               ))}
             </div>

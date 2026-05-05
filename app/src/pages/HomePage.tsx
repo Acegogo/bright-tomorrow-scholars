@@ -42,6 +42,8 @@ const programs = [
 ];
 
 const heroSlides = [
+  '/home_main_hero.png',
+  '/home_alternate_symbolic.png',
   '/hero_slide_1.png',
   '/hero_slide_2.png',
   '/hero_slide_3.png',
@@ -161,7 +163,7 @@ export default function HomePage() {
   return (
     <div className="overflow-hidden">
       {/* Hero Section */}
-      <section ref={heroRef} className="relative min-h-screen flex items-center pt-20">
+      <section ref={heroRef} className="relative min-h-screen flex items-center pt-28">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-[#2D9C4E]/10 via-transparent to-[#E63946]/10" />
           <div className="absolute top-20 right-0 w-1/2 h-1/2 bg-[#F4A261]/20 rounded-full blur-3xl" />
@@ -412,8 +414,12 @@ export default function HomePage() {
 
       {/* CTA Section */}
       <section ref={ctaRef} className="py-24 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#2D9C4E] via-[#1B5E2E] to-[#0D3320]" />
-        <div className="absolute inset-0 opacity-20">
+        <div
+          className="absolute inset-0 bg-[url('/home_bottom_cta_band.png')] bg-cover bg-center"
+          aria-hidden
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#2D9C4E]/92 via-[#1B5E2E]/95 to-[#0D3320]/98" />
+        <div className="absolute inset-0 opacity-20 pointer-events-none">
           <div className="absolute top-0 left-0 w-96 h-96 bg-white/10 rounded-full blur-3xl" />
           <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#F4A261]/20 rounded-full blur-3xl" />
         </div>
@@ -435,10 +441,11 @@ export default function HomePage() {
                   Donate Today
                 </Button>
               </Link>
-              <Link to="/contact">
-                <Button variant="outline" className="border-2 border-white text-white hover:bg-white/10 rounded-full px-10 py-7 text-lg transition-all">
-                  Get in Touch
-                </Button>
+              <Link
+                to="/contact"
+                className="inline-flex min-h-[3.5rem] cursor-pointer items-center justify-center rounded-full border-2 border-white bg-white/15 px-10 py-3 text-lg font-bold text-white shadow-lg backdrop-blur-sm transition-colors duration-300 hover:bg-white hover:text-[#14532d] sm:py-7"
+              >
+                Get in Touch
               </Link>
             </div>
           </div>
