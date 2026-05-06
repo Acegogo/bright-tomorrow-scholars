@@ -277,7 +277,7 @@ export default function ProgramsPage() {
                     </div>
                   </div>
 
-                  <a href="https://wa.me/254722931145" target="_blank" rel="noopener noreferrer">
+                  <a href="https://wa.me/254725673476" target="_blank" rel="noopener noreferrer">
                     <Button className={`bg-gradient-to-r ${program.color} text-white rounded-full px-8 py-6 shadow-lg hover:shadow-xl`}>
                       Apply via WhatsApp
                       <ArrowRight className="w-5 h-5 ml-2" />

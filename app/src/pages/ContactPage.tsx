@@ -26,7 +26,7 @@ const contactInfo = [
     icon: Phone,
     title: 'Call Us',
     details: [
-      '+254 722 931145',
+      '+254 725 673476',
       'Mon-Fri, 8am-5pm EAT',
     ],
     color: 'bg-[#E63946]/10 text-[#E63946]',
@@ -56,19 +56,19 @@ const regionalOffices = [
     city: 'Nyahururu',
     region: 'Laikipia County',
     address: 'Njaus Corner, Koinange Street, Nyahururu · Postal 20300',
-    phone: '+254 722 931145',
+    phone: '+254 725 673476',
   },
   {
     city: 'Mbeere',
     region: 'Embu County',
     address: 'Regional hub — Mbeere, Embu County',
-    phone: '+254 722 931145',
+    phone: '+254 725 673476',
   },
   {
     city: 'Mwingi North',
     region: 'Kitui County',
     address: 'Regional hub — Mwingi North, Kitui County',
-    phone: '+254 722 931145',
+    phone: '+254 725 673476',
   },
 ];
 
@@ -263,7 +263,7 @@ export default function ContactPage() {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      placeholder="+254 722 931145"
+                      placeholder="+254 725 673476"
                       className="py-6"
                     />
                   </div>
@@ -425,14 +425,14 @@ export default function ContactPage() {
               Email Us
             </a>
             <a
-              href="tel:+254722931145"
+              href="tel:+254725673476"
               className="inline-flex items-center gap-2 border-2 border-white text-white rounded-full px-8 py-4 font-bold hover:bg-white/10 transition-colors"
             >
               <Phone className="w-5 h-5" />
               Call Us
             </a>
             <a
-              href="https://wa.me/254722931145"
+              href="https://wa.me/254725673476"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-[#25D366] text-white rounded-full px-8 py-4 font-bold hover:bg-[#128C7E] transition-colors"

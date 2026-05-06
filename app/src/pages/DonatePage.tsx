@@ -104,7 +104,7 @@ export default function DonatePage() {
     }
 
     const message = `Hello Bright Tomorrow Scholars, I would like to make a donation of KSh ${amount.toLocaleString()} for the ${donationType} program.`;
-    window.open(`https://wa.me/254722931145?text=${encodeURIComponent(message)}`, '_blank');
+    window.open(`https://wa.me/254725673476?text=${encodeURIComponent(message)}`, '_blank');
   };
 
   const finalAmount = selectedAmount || parseInt(customAmount) || 0;
