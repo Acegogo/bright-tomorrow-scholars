@@ -88,9 +88,8 @@ export default function Footer() {
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-[#2D9C4E] flex-shrink-0 mt-0.5" />
                 <span className="text-gray-400 text-sm leading-relaxed">
-                  Njaus Corner, Nyahururu Town<br />
-                  Koinange Street<br />
-                  Nyahururu, Laikipia County<br />
+                  Nelly Mart building, Koinange Street, Nyahururu<br />
+                  Laikipia County<br />
                   P.O. Box 1368, 20300 Nyahururu, Kenya<br />
                   <span className="text-gray-500">Regional hubs: Mbeere, Embu County · Mwingi North, Kitui County</span>
                 </span>

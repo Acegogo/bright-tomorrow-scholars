@@ -140,7 +140,9 @@ export default function ContactSection({ className = '' }: ContactSectionProps) 
               <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
                 <MapPin className="w-5 h-5 text-white/70" />
               </div>
-              <span className="text-white/90">1204 Hope Street, Suite 300, Portland, OR</span>
+              <span className="text-white/90">
+                Nelly Mart building, Koinange Street, Nyahururu, Laikipia County
+              </span>
             </div>
           </div>
 
