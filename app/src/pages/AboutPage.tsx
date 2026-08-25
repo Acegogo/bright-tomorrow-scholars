@@ -284,8 +284,12 @@ export default function AboutPage() {
 
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-white rounded-3xl overflow-hidden shadow-lg">
-              <div className="h-64 bg-gradient-to-br from-[#F4A261] to-[#E76F51] flex items-center justify-center">
-                <Heart className="w-20 h-20 text-white/50" />
+              <div className="h-64 overflow-hidden">
+                <img
+                  src="/founder_image.jpeg"
+                  alt="Niceta Ndege (Teacher Nice), Founder & Chairperson"
+                  className="w-full h-full object-cover object-top"
+                />
               </div>
               <div className="p-6">
                 <h3 className="font-['Montserrat'] font-bold text-xl text-gray-900 mb-1">
