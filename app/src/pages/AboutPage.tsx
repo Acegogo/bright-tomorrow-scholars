@@ -150,8 +150,8 @@ export default function AboutPage() {
                 </div>
                 <div className="rounded-3xl overflow-hidden shadow-lg">
                   <img
-                    src="/hero_slide_3.png"
-                    alt="Foundation reach and celebration"
+                    src="/founder_graduation_celebration.webp"
+                    alt="Teacher Nice celebrating with a graduating scholar and her family"
                     className="w-full h-[140px] lg:h-[160px] object-cover"
                   />
                 </div>
@@ -175,9 +175,9 @@ export default function AboutPage() {
               </div>
               <h2 className="font-['Montserrat'] font-bold text-3xl mb-4">Our Mission</h2>
               <p className="text-white/90 text-lg leading-relaxed">
-                To provide comprehensive educational support to deserving students from 
-                vulnerable communities in Kenya, empowering them to achieve their full 
-                potential and become agents of positive change in society.
+                To support needy learners through education while developing sustainable
+                community initiatives that promote self-reliance, environmental conservation
+                and lasting positive change.
               </p>
             </div>
 
@@ -187,9 +187,8 @@ export default function AboutPage() {
               </div>
               <h2 className="font-['Montserrat'] font-bold text-3xl mb-4">Our Vision</h2>
               <p className="text-white/90 text-lg leading-relaxed">
-                A Kenya where every child has access to quality education and the 
-                opportunity to build a brighter future, regardless of their socioeconomic 
-                background.
+                A future where no deserving child is denied education because of
+                financial hardship.
               </p>
             </div>
           </div>

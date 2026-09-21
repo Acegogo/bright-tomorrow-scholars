@@ -1,13 +1,30 @@
 import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Check, BookOpen, GraduationCap, Globe, ClipboardCheck, FileText, MessageSquare, ArrowRight, Award } from 'lucide-react';
+import { Check, BookOpen, GraduationCap, Globe, ClipboardCheck, FileText, MessageSquare, ArrowRight, Award, Sprout } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const programs = [
+interface Program {
+  id: string;
+  icon: typeof BookOpen;
+  title: string;
+  subtitle: string;
+  description: string;
+  coverage: string[];
+  eligibility: string[];
+  color: string;
+  bgColor: string;
+  heroImage?: string;
+  legacyImage?: string;
+  coverageLabel?: string;
+  eligibilityLabel?: string;
+  ctaLabel?: string;
+}
+
+const programs: Program[] = [
   {
     id: 'primary',
     icon: BookOpen,
@@ -31,7 +48,7 @@ const programs = [
     color: 'from-[#2D9C4E] to-[#1B5E2E]',
     bgColor: 'bg-[#2D9C4E]/5',
     heroImage: '/program_primary_children_reading.png',
-    legacyImage: '/primary_students_kenya.jpg',
+    legacyImage: '/founder_feeding_children.webp',
   },
   {
     id: 'secondary',
@@ -56,7 +73,7 @@ const programs = [
     color: 'from-[#E63946] to-[#D62839]',
     bgColor: 'bg-[#E63946]/5',
     heroImage: '/program_secondary_corridor.png',
-    legacyImage: '/study_group_kenya.jpg',
+    legacyImage: '/founder_visiting_needy_student.webp',
   },
   {
     id: 'university',
@@ -106,7 +123,34 @@ const programs = [
     color: 'from-[#9B5DE5] to-[#7B2CBF]',
     bgColor: 'bg-[#9B5DE5]/5',
     heroImage: '/program_sports_youth_athletics.png',
-    legacyImage: '/sports_tournament.png',
+    legacyImage: '/founder_sports_day.webp',
+  },
+  {
+    id: 'agriculture',
+    icon: Sprout,
+    title: 'Sustainable Agriculture & Community Development',
+    subtitle: 'Growing a Self-Reliant Future',
+    description: 'The Foundation has access to 20 acres of land in Mbeere, Embu County. Roughly 5 acres are already under vegetable farming and tree-seedling production, with income channelled back into supporting needy learners while promoting environmental conservation. We are working to expand this into a sustainable income-generating project that helps finance education support for years to come.',
+    coverage: [
+      'Vegetable farming on 5+ acres in Mbeere, Embu County',
+      'Tree-seedling production and tree planting',
+      'Income reinvested into scholar support',
+      'Environmental conservation initiatives',
+      'Room to grow across the full 20-acre plot',
+      'Skills and livelihood training for the community',
+    ],
+    eligibility: [
+      'Community members in Mbeere seeking livelihood skills',
+      'Scholars supported through project income',
+      'Donors and partners investing in sustainability',
+      'Anyone who shares our commitment to self-reliance',
+    ],
+    color: 'from-[#2D9C4E] to-[#F4A261]',
+    bgColor: 'bg-[#2D9C4E]/5',
+    heroImage: '/founder_vegetable_farm.webp',
+    coverageLabel: 'How It Works',
+    eligibilityLabel: 'Who Benefits',
+    ctaLabel: 'Partner With Us via WhatsApp',
   },
 ];
 
@@ -251,7 +295,7 @@ export default function ProgramsPage() {
                   <div className="grid sm:grid-cols-2 gap-8 mb-8">
                     <div>
                       <h3 className="font-['Montserrat'] font-bold text-lg text-gray-900 mb-4">
-                        What's Covered
+                        {program.coverageLabel ?? "What's Covered"}
                       </h3>
                       <ul className="space-y-2">
                         {program.coverage.map((item, i) => (
@@ -264,7 +308,7 @@ export default function ProgramsPage() {
                     </div>
                     <div>
                       <h3 className="font-['Montserrat'] font-bold text-lg text-gray-900 mb-4">
-                        Eligibility
+                        {program.eligibilityLabel ?? 'Eligibility'}
                       </h3>
                       <ul className="space-y-2">
                         {program.eligibility.map((item, i) => (
@@ -279,27 +323,41 @@ export default function ProgramsPage() {
 
                   <a href="https://wa.me/254725673476" target="_blank" rel="noopener noreferrer">
                     <Button className={`bg-gradient-to-r ${program.color} text-white rounded-full px-8 py-6 shadow-lg hover:shadow-xl`}>
-                      Apply via WhatsApp
+                      {program.ctaLabel ?? 'Apply via WhatsApp'}
                       <ArrowRight className="w-5 h-5 ml-2" />
                     </Button>
                   </a>
                 </div>
 
                 <div className={`${index % 2 === 1 ? 'lg:order-1' : ''}`}>
-                  <div className="rounded-3xl overflow-hidden shadow-2xl ring-1 ring-gray-900/5 bg-gray-50/80 p-2">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                  {program.heroImage && program.legacyImage ? (
+                    <div className="rounded-3xl overflow-hidden shadow-2xl ring-1 ring-gray-900/5 bg-gray-50/80 p-2">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                        <img
+                          src={program.heroImage}
+                          alt={`${program.title} — featured artwork`}
+                          className="w-full h-[220px] sm:h-[400px] rounded-2xl object-cover"
+                        />
+                        <img
+                          src={program.legacyImage}
+                          alt={`${program.title} — photos from our programs`}
+                          className="w-full h-[220px] sm:h-[400px] rounded-2xl object-cover"
+                        />
+                      </div>
+                    </div>
+                  ) : program.heroImage || program.legacyImage ? (
+                    <div className="rounded-3xl overflow-hidden shadow-2xl ring-1 ring-gray-900/5">
                       <img
-                        src={program.heroImage}
-                        alt={`${program.title} — featured artwork`}
-                        className="w-full h-[220px] sm:h-[400px] rounded-2xl object-cover"
-                      />
-                      <img
-                        src={program.legacyImage}
-                        alt={`${program.title} — photos from our programs`}
-                        className="w-full h-[220px] sm:h-[400px] rounded-2xl object-cover"
+                        src={program.heroImage ?? program.legacyImage}
+                        alt={`${program.title} — featured photo`}
+                        className="w-full h-[300px] sm:h-[420px] object-cover"
                       />
                     </div>
-                  </div>
+                  ) : (
+                    <div className={`rounded-3xl shadow-2xl bg-gradient-to-br ${program.color} h-[300px] sm:h-[420px] flex items-center justify-center`}>
+                      <program.icon className="w-24 h-24 text-white/50" />
+                    </div>
+                  )}
                 </div>
               </div>
             ))}

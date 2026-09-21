@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Heart, Gift, Repeat, Building2, Check, Shield, Users, GraduationCap } from 'lucide-react';
+import { Heart, Gift, Repeat, Building2, Check, Shield, Users, GraduationCap, Sprout, Trees, Handshake } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 
@@ -37,6 +37,29 @@ const donationTypes = [
     title: 'Corporate Partnership',
     description: 'Partner with us to sponsor a cohort of students in your region. Make a lasting impact on Kenyan education.',
     color: 'from-[#F4A261] to-[#E76F51]',
+  },
+];
+
+const approachItems = [
+  {
+    icon: GraduationCap,
+    title: 'Education Support',
+    description: 'Fees, learning materials and other essentials for needy learners at primary, secondary and university level.',
+  },
+  {
+    icon: Sprout,
+    title: 'Sustainable Agriculture',
+    description: 'Vegetable farming on our Mbeere land generates income to help finance education support.',
+  },
+  {
+    icon: Trees,
+    title: 'Tree-Seedling Production',
+    description: 'Growing and planting tree seedlings to promote environmental conservation.',
+  },
+  {
+    icon: Handshake,
+    title: 'Community Development',
+    description: 'Creating opportunities for long-term self-reliance in the communities we serve.',
   },
 ];
 
@@ -358,20 +381,60 @@ export default function DonatePage() {
         </div>
       </section>
 
+      {/* Our Approach Section */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <span className="inline-block px-4 py-2 bg-[#2D9C4E]/10 text-[#2D9C4E] rounded-full text-sm font-medium mb-4">
+              Our Approach
+            </span>
+            <h2 className="font-['Montserrat'] font-black text-4xl text-gray-900 mb-6">
+              Education Today, Sustainability Tomorrow
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              Our immediate goal is to support 100 needy learners and students at primary,
+              secondary and university levels. A donation can help a child stay in school
+              today, while investment in our sustainable project can help create a source
+              of income that supports more children tomorrow.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {approachItems.map((item, index) => (
+              <div
+                key={index}
+                className="bg-gray-50 rounded-2xl p-8 text-center shadow-sm hover:shadow-lg transition-shadow"
+              >
+                <div className="w-16 h-16 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-[#2D9C4E] to-[#1B5E2E] flex items-center justify-center">
+                  <item.icon className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="font-['Montserrat'] font-bold text-lg text-gray-900 mb-3">
+                  {item.title}
+                </h3>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  {item.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Corporate Section */}
       <section className="py-24 bg-gradient-to-br from-[#2D9C4E] to-[#1B5E2E]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="text-white">
               <span className="inline-block px-4 py-2 bg-white/20 rounded-full text-sm font-medium mb-6">
-                Corporate Partnership
+                Partnership
               </span>
               <h2 className="font-['Montserrat'] font-black text-4xl mb-6">
                 Partner With Us
               </h2>
               <p className="text-white/90 text-lg leading-relaxed mb-8">
-                Join leading Kenyan companies in making a lasting impact on education. 
-                Corporate partnerships help us reach more students and create sustainable change.
+                We welcome partnerships with individual donors, foundations, corporations,
+                faith-based organisations, development organisations and other well-wishers
+                who share our commitment to education and sustainable community development.
               </p>
 
               <div className="space-y-4 mb-8">
@@ -401,20 +464,11 @@ export default function DonatePage() {
               </a>
             </div>
 
-            <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-8">
-              <h3 className="font-['Montserrat'] font-bold text-2xl text-white mb-6">
-                Current Corporate Partners
-              </h3>
-              <div className="grid grid-cols-2 gap-4">
-                {['Safaricom', 'KCB Bank', 'Equity Bank', 'Kenya Power', 'Kenyatta University', 'University of Nairobi'].map((partner) => (
-                  <div
-                    key={partner}
-                    className="bg-white/10 rounded-xl p-4 text-center text-white font-medium"
-                  >
-                    {partner}
-                  </div>
-                ))}
-              </div>
+            <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-10 text-center">
+              <Handshake className="w-14 h-14 text-white mx-auto mb-6" />
+              <p className="font-['Montserrat'] font-black text-2xl lg:text-3xl text-white leading-snug">
+                Partner with us to keep a child in school and help build a sustainable future.
+              </p>
             </div>
           </div>
         </div>

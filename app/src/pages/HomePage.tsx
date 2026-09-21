@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ArrowRight, Heart, GraduationCap, Users, BookOpen, TrendingUp, Award, Globe } from 'lucide-react';
+import { ArrowRight, Heart, GraduationCap, Users, BookOpen, TrendingUp, Award, Globe, Sprout } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -39,6 +39,12 @@ const programs = [
     description: 'Nurturing athletic talent, promoting unity, and supporting education through sports.',
     color: 'from-[#9B5DE5] to-[#7B2CBF]',
   },
+  {
+    icon: Sprout,
+    title: 'Sustainable Agriculture',
+    description: 'Farming and tree-seedling production on 20 acres in Mbeere, generating income to keep more children in school.',
+    color: 'from-[#2D9C4E] to-[#F4A261]',
+  },
 ];
 
 const heroSlides = [
@@ -46,7 +52,7 @@ const heroSlides = [
   '/home_alternate_symbolic.png',
   '/hero_slide_1.png',
   '/hero_slide_2.png',
-  '/hero_slide_3.png',
+  '/founder_graduation_celebration.webp',
 ];
 
 export default function HomePage() {
@@ -163,32 +169,50 @@ export default function HomePage() {
   return (
     <div className="overflow-hidden">
       {/* Hero Section */}
-      <section ref={heroRef} className="relative min-h-screen flex items-center pt-36">
-        <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-[#2D9C4E]/10 via-transparent to-[#E63946]/10" />
-          <div className="absolute top-20 right-0 w-1/2 h-1/2 bg-[#F4A261]/20 rounded-full blur-3xl" />
-          <div className="absolute bottom-0 left-0 w-1/3 h-1/3 bg-[#2D9C4E]/20 rounded-full blur-3xl" />
+      <section ref={heroRef} className="relative min-h-screen flex items-center overflow-hidden">
+        {/* Full-bleed photo backdrop */}
+        <div className="hero-image absolute inset-0">
+          {heroSlides.map((slide, index) => (
+            <div
+              key={slide}
+              className={`absolute inset-0 transition-opacity duration-1000 ease-out ${
+                index === currentSlide ? 'opacity-100' : 'opacity-0'
+              }`}
+            >
+              <img
+                src={slide}
+                alt={`Bright Tomorrow Scholars Foundation — story ${index + 1}`}
+                className={`w-full h-full object-cover ${index === currentSlide ? 'animate-kenburns' : ''}`}
+              />
+            </div>
+          ))}
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="hero-content">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#2D9C4E]/10 rounded-full mb-6">
-                <Heart className="w-4 h-4 text-[#E63946] fill-[#E63946]" />
-                <span className="text-sm font-medium text-[#2D9C4E]">20+ Years of Impact</span>
+        {/* Scrim layers — keep the nav legible up top and the glass panel readable at left */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/10 to-black/75" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/15 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#07170F]/40 via-transparent to-transparent" />
+
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-40 pb-16 lg:pb-24">
+          <div className="hero-content max-w-xl">
+            {/* Glass panel */}
+            <div className="rounded-[2rem] border border-white/25 bg-white/10 backdrop-blur-2xl shadow-[0_20px_60px_-15px_rgba(0,0,0,0.55)] p-8 sm:p-10">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/15 border border-white/25 backdrop-blur-md mb-6">
+                <Heart className="w-4 h-4 text-[#F4A261] fill-[#F4A261]" />
+                <span className="text-sm font-medium text-white">20+ Years of Impact</span>
               </div>
-              <h1 className="font-['Montserrat'] font-black text-5xl sm:text-6xl lg:text-7xl text-gray-900 leading-[1.1] mb-6">
+              <h1 className="font-['Montserrat'] font-black text-4xl sm:text-5xl lg:text-6xl text-white leading-[1.1] mb-6">
                 Building{' '}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2D9C4E] to-[#1B5E2E]">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#7EE8A8] to-[#F4A261]">
                   Brighter
                 </span>{' '}
                 Futures for Kenyan Youth
               </h1>
-              <p className="text-xl text-gray-600 leading-relaxed mb-8 max-w-xl">
-                Empowering students from vulnerable communities across Kenya through 
+              <p className="text-lg text-white/85 leading-relaxed mb-8">
+                Empowering students from vulnerable communities across Kenya through
                 education scholarships from primary school to university—and beyond.
               </p>
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-wrap gap-4 mb-8">
                 <Link to="/donate">
                   <Button className="bg-gradient-to-r from-[#E63946] to-[#D62839] hover:from-[#D62839] hover:to-[#C41E2B] text-white rounded-full px-8 py-6 text-lg shadow-lg hover:shadow-xl transition-all">
                     <Heart className="w-5 h-5 mr-2 fill-white" />
@@ -196,41 +220,42 @@ export default function HomePage() {
                   </Button>
                 </Link>
                 <Link to="/programs">
-                  <Button variant="outline" className="border-2 border-[#2D9C4E] text-[#2D9C4E] hover:bg-[#2D9C4E] hover:text-white rounded-full px-8 py-6 text-lg transition-all">
+                  <Button
+                    variant="outline"
+                    className="border-2 border-white/50 bg-white/5 text-white hover:bg-white hover:text-gray-900 backdrop-blur-md rounded-full px-8 py-6 text-lg transition-all"
+                  >
                     Our Programs
                     <ArrowRight className="w-5 h-5 ml-2" />
                   </Button>
                 </Link>
               </div>
-            </div>
 
-            <div className="hero-image relative">
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl h-[500px] lg:h-[600px] bg-gray-100">
-                {heroSlides.map((slide, index) => (
-                  <img
-                    key={slide}
-                    src={slide}
-                    alt={`Foundation story slide ${index + 1}`}
-                    className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
-                      index === currentSlide ? 'opacity-100' : 'opacity-0'
-                    }`}
-                  />
-                ))}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
-              </div>
-              <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-xl p-6 z-20">
-                <div className="flex items-center gap-4">
-                  <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[#2D9C4E] to-[#1B5E2E] flex items-center justify-center">
-                    <Users className="w-7 h-7 text-white" />
-                  </div>
-                  <div>
-                    <p className="font-['Montserrat'] font-bold text-2xl text-gray-900">12,400+</p>
-                    <p className="text-sm text-gray-500">Lives Transformed</p>
-                  </div>
+              {/* Stat row */}
+              <div className="flex items-center gap-4 pt-6 border-t border-white/20">
+                <div className="w-14 h-14 shrink-0 rounded-full bg-white/15 border border-white/25 backdrop-blur-md flex items-center justify-center">
+                  <Users className="w-7 h-7 text-white" />
+                </div>
+                <div>
+                  <p className="font-['Montserrat'] font-bold text-2xl text-white">12,400+</p>
+                  <p className="text-sm text-white/70">Lives Transformed</p>
                 </div>
               </div>
             </div>
           </div>
+        </div>
+
+        {/* Slide indicators */}
+        <div className="absolute bottom-6 right-6 sm:right-10 z-10 flex items-center gap-2 px-3 py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-md">
+          {heroSlides.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentSlide(index)}
+              aria-label={`Show story ${index + 1}`}
+              className={`h-1.5 rounded-full transition-all duration-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/80 ${
+                index === currentSlide ? 'w-8 bg-white' : 'w-3 bg-white/40 hover:bg-white/60'
+              }`}
+            />
+          ))}
         </div>
       </section>
 
@@ -269,26 +294,26 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {programs.map((program, index) => (
               <div
                 key={index}
-                className="program-card group relative bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden"
+                className="program-card group relative bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden flex flex-col h-full"
               >
                 <div className={`h-2 bg-gradient-to-r ${program.color}`} />
-                <div className="p-8">
+                <div className="p-8 flex flex-col flex-1">
                   <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${program.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
                     <program.icon className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="font-['Montserrat'] font-bold text-2xl text-gray-900 mb-4">
                     {program.title}
                   </h3>
-                  <p className="text-gray-600 leading-relaxed mb-6">
+                  <p className="text-gray-600 leading-relaxed mb-6 line-clamp-3 flex-1">
                     {program.description}
                   </p>
                   <Link
                     to="/programs"
-                    className="inline-flex items-center text-[#2D9C4E] font-medium hover:text-[#1B5E2E] transition-colors"
+                    className="inline-flex items-center text-[#2D9C4E] font-medium hover:text-[#1B5E2E] transition-colors mt-auto"
                   >
                     Learn More
                     <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
